@@ -1,6 +1,6 @@
 {
   "name": "logrotator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Log rotation in pure javascript",
   "author": "Capriza Inc. <backend@capriza.com>",
   "maintainers": [
