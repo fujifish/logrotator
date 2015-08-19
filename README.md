@@ -10,7 +10,7 @@ This way we avoid file renaming problems where programs are not always prepared 
 ## Usage
 
 ```javascript
-var logrotate = require('logrotate');
+var logrotate = require('logrotator');
 
 // use the global rotator
 var rotator = logrotate.rotator;
