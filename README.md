@@ -1,7 +1,13 @@
 # logrotator
 Log rotation in pure javascript.
 
-## Example
+Log rotation is performed based on the size of the file.
+If the file size reaches the designated limit, rotation takes place.
+
+Rotation is based on copying the file contents and then truncating the file size to 0.
+This way we avoid file renaming problems where programs are not always prepared to handle a log file being renamed.
+
+## Usage
 
 ```javascript
 var logrotate = require('logrotate');
