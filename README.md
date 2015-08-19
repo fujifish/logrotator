@@ -1,4 +1,7 @@
-# logrotator
+![Logrotator](/logrotator-logo.png)
+
+# Logrotator
+
 Log rotation in pure javascript.
 
 Log rotation is performed based on the size of the file.
