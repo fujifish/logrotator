@@ -21,6 +21,8 @@ util.inherits(Logrotator, events.EventEmitter);
  *  - size - size of the file to trigger rotation. possible values are '1k', '1m', '1g'. default is 10m.
  *  - count - number of files to keep. default is 3.
  *  - compress - whether to gzip rotated files. default is true.
+ *  - format - a function to build the name of a rotated file. the function receives the index of the rotated file.
+ *            default format is the index itself.
  */
 Logrotator.prototype.register = function(file, options) {
 
@@ -116,6 +118,8 @@ Logrotator.prototype._sizeMultiplier = function(multi) {
  *  - size - size of the file to trigger rotation. possible values are '1k', '1m', '1g'. default is 10m.
  *  - count - number of files to keep. default is 3.
  *  - compress - gzip rotated files. default is true.
+ *  - format - a function to build the name of a rotated file. the function receives the index of the rotated file.
+ *            default format is the index itself.
  * @param cb - invoked on completion, receives 'err' on error
  */
 Logrotator.prototype.rotate = function(file, options, cb) {
@@ -174,7 +178,12 @@ Logrotator.prototype.rotate = function(file, options, cb) {
  * @private
  */
 Logrotator.prototype._filename = function(file, index, options) {
-  var fileName = file + '.' + index;
+  var format = index;
+  if (typeof options.format === 'function') {
+    format = options.format(index);
+  }
+
+  var fileName = file + '.' + format;
   if (options.compress) {
     fileName += '.gz';
   }

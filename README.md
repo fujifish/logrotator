@@ -48,6 +48,8 @@ Schedules a file for rotation. emits a 'rotate' event whenever the file has been
   * `size` - size of the file to trigger rotation. possible values are '1k', '1m', '1g'. default is 10m.
   * `count` - number of files to keep. default is 3.
   * `compress` - whether to gzip rotated files. default is true.
+  * `format` - a function to build the name of a rotated file. the function receives the index of the rotated file.
+                 default format is the index itself
 
 #### `unregister(file)`
 
@@ -70,12 +72,14 @@ Rotate a file now if size conditions are met.
   * `size` - size of the file to trigger rotation. possible values are '1k', '1m', '1g'. default is 10m.
   * `count` - number of files to keep. default is 3.
   * `compress` - whether to gzip rotated files. default is true.
+  * `format` - a function to build the name of a rotated file. the function receives the index of the rotated file.
+               default format is the index itself
 
 ## License
 
 The MIT License (MIT)
 
-Copyright (c) 2015 Capriza
+Copyright (c) 2016 Capriza
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
