@@ -1,6 +1,7 @@
-![Logrotator](/logrotator-logo.png)
+<div align="center"><img src="https://capriza.github.io/images/logos/logos-log.svg" height="128" /></div>
 
-# Logrotator
+Logrotator
+===
 
 Log rotation in pure javascript.
 
